@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>دور الصخور الرسوبية في النظام المائي الجوفي</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      color: white;
+      min-height: 100vh;
+      padding-bottom: 180px;
+    }
+    .overlay {
+      position: fixed;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+      z-index: 1;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: #a0e9ff;
+      text-shadow: 0 0 15px #ffffff99;
+      animation: slideIn 1.2s ease-out forwards;
+    }
+    .content {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    details {
+      background: rgba(0, 188, 212, 0.05);
+      margin-bottom: 20px;
+      border-radius: 12px;
+      padding: 15px;
+      cursor: pointer;
+      border: 1px solid #00bcd4;
+    }
+    summary {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #00e5ff;
+      text-shadow: 0 0 5px #00e5ff66;
+    }
+    .buttons-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 30px 15px;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 999;
+    }
+    .buttons-container a,
+    .buttons-container button {
+      background: #00bcd4;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .buttons-container a:hover,
+    .buttons-container button:hover {
+      background: #0097a7;
+      transform: scale(1.05);
+    }
+    .back-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #00bcd4;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 1rem;
+      z-index: 1000;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+      transition: background 0.3s, transform 0.3s;
+    }
+    .back-btn:hover {
+      background: #0097a7;
+      transform: scale(1.05);
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <header>
+    <h1>دور الصخور الرسوبية في النظام المائي الجوفي</h1>
+  </header>
+
+  <div class="content" id="pdf-content">
+    <details open>
+      <summary>مقدمة</summary>
+      <div style="padding-top: 15px; line-height: 2; font-size: 1.2rem; color: #ffffffcc;">
+        <p>الصخور الرسوبية تلعب دورًا هامًا في النظام المائي الجوفي، حيث يمكن أن تكون مصدرًا للمياه الجوفية أو عائقًا لها. في هذا السمنار، سنناقش دور الصخور الرسوبية في النظام المائي الجوفي.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>أنواع الصخور الرسوبية</summary>
+      <div style="padding-top: 15px; line-height: 2; font-size: 1.2rem; color: #ffffffcc;">
+        <ul>
+          <li><strong>الصخور الرسوبية الفتاتية:</strong> تتكون من فتات الصخور الأخرى، مثل الحجر الرملي والطيني.</li>
+          <li><strong>الصخور الرسوبية الكيميائية:</strong> تتكون من ترسيب المعادن من المحاليل، مثل الحجر الجيري والملح الصخري.</li>
+          <li><strong>الصخور الرسوبية العضوية:</strong> تتكون من تراكم المواد العضوية، مثل الفحم.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>دور الصخور الرسوبية في النظام المائي الجوفي</summary>
+      <div style="padding-top: 15px; line-height: 2; font-size: 1.2rem; color: #ffffffcc;">
+        <ul>
+          <li><strong>مصدر المياه الجوفية:</strong> يمكن أن تكون الصخور الرسوبية مصدرًا للمياه الجوفية إذا كانت تحتوي على مسام وفتحات تسمح بتخزين المياه.</li>
+          <li><strong>عائق للمياه الجوفية:</strong> يمكن أن تكون الصخور الرسوبية عائقًا للمياه الجوفية إذا كانت غير منفذة أو ذات نفاذية منخفضة.</li>
+          <li><strong>تأثير على جودة المياه:</strong> يمكن أن تؤثر الصخور الرسوبية على جودة المياه الجوفية من خلال التفاعلات الكيميائية بين المياه والصخور.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>أمثلة على الصخور الرسوبية ودورها</summary>
+      <div style="padding-top: 15px; line-height: 2; font-size: 1.2rem; color: #ffffffcc;">
+        <ul>
+          <li><strong>الحجر الرملي:</strong> يمكن أن يكون مصدرًا للمياه الجوفية بسبب مساميته العالية.</li>
+          <li><strong>الحجر الجيري:</strong> يمكن أن يكون مصدرًا للمياه الجوفية، ولكنه قد يؤثر على جودة المياه بسبب التفاعلات الكيميائية.</li>
+          <li><strong>الطين:</strong> يمكن أن يكون عائقًا للمياه الجوفية بسبب نفاذيته المنخفضة.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>أهمية الدراسة</summary>
+      <div style="padding-top: 15px; line-height: 2; font-size: 1.2rem; color: #ffffffcc;">
+        <ul>
+          <li>استكشاف الموارد المائية.</li>
+          <li>تقييم جودة المياه الجوفية.</li>
+          <li>تصميم المشاريع المائية مثل الآبار والخزانات.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>خاتمة</summary>
+      <div style="padding-top: 15px; line-height: 2; font-size: 1.2rem; color: #ffffffcc;">
+        <p>في الختام، يمكن القول أن دراسة دور الصخور الرسوبية في النظام المائي الجوفي هي أمر هام لفهم كيفية تدفق المياه الجوفية وتأثير الصخور الرسوبية على جودة المياه.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="buttons-container">
+    <a href="topics.html">الرجوع للموضوعات</a>
+    <a class="back-btn" href="index.html">العودة إلى أقسام البرنامج</a>
+  </div>
+
+  <script>
+    function downloadPDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      html2canvas(document.querySelector("#pdf-content"), {scale: 2}).then(canvas => {
+        const imgData = canvas.toDataURL("image/png");
+        const imgProps= doc.getImageProperties(imgData);
+        const pdfWidth = doc.internal.pageSize.getWidth();
+        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+        doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        doc.save("sedimentary_rocks_groundwater.pdf");
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>الطبقات الجيولوجية والمياه الجوفية</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <style>
+    /* نفس التنسيق محفوظ كما هو */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      color: white;
+      min-height: 100vh;
+      padding-bottom: 180px;
+    }
+    .overlay {
+      position: fixed;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+      z-index: 1;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: #a0e9ff;
+      text-shadow: 0 0 15px #ffffff99;
+      animation: slideIn 1.2s ease-out forwards;
+    }
+    .content {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    details {
+      background: rgba(0, 188, 212, 0.05);
+      margin-bottom: 20px;
+      border-radius: 12px;
+      padding: 15px;
+      cursor: pointer;
+      border: 1px solid #00bcd4;
+    }
+    summary {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #00e5ff;
+      text-shadow: 0 0 5px #00e5ff66;
+    }
+    .buttons-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 30px 15px;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 999;
+    }
+    .buttons-container a,
+    .buttons-container button {
+      background: #00bcd4;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .buttons-container a:hover,
+    .buttons-container button:hover {
+      background: #0097a7;
+      transform: scale(1.05);
+    }
+    .back-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #00bcd4;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 1rem;
+      z-index: 1000;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+      transition: background 0.3s, transform 0.3s;
+    }
+    .back-btn:hover {
+      background: #0097a7;
+      transform: scale(1.05);
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <header>
+    <h1>الطبقات الجيولوجية والمياه الجوفية</h1>
+  </header>
+
+  <div class="content" id="pdf-content">
+    <details open>
+  <summary>مقدمة</summary>
+  <div style="padding-top: 15px; line-height: 2; font-size: 1.2rem; color: #ffffffcc;">
+    <p>
+      تعد <strong style="color:#00e5ff;">المياه الجوفية</strong> من أهم مصادر المياه العذبة في العالم، خاصة في المناطق الجافة وشبه الجافة.
+      لفهم كيفية وجودها وتحركها، يجب أن نتعرف على الطبقات الجيولوجية، التي تشكل البنية الأساسية لباطن الأرض.
+      في هذا السمنار، سنستعرض كيفية تكوّن الطبقات الجيولوجية وتأثيرها على حركة وتخزين المياه الجوفية.
+    </p>
+  </div>
+</details>
+
+<details>
+  <summary>تعريف الطبقات الجيولوجية</summary>
+  <div style="padding-top: 15px; line-height: 2; font-size: 1.2rem; color: #ffffffcc;">
+    <p>
+      الطبقات الجيولوجية هي ترتيب الرواسب والصخور في باطن الأرض على شكل طبقات متراكبة. كل طبقة لها خصائصها الفريدة من حيث المسامية والنفاذية.
+      هناك طبقات تخزن المياه وتسمح بتحركها داخلها، وطبقات أخرى تمنع حركة المياه.
+    </p>
+  </div>
+</details>
+
+<details>
+  <summary>تعريف النظام المائي الجوفي</summary>
+  <div style="padding-top: 15px; line-height: 2; font-size: 1.2rem; color: #ffffffcc;">
+    <p>
+      النظام المائي الجوفي هو شبكة من الممرات والفراغات داخل الصخور والتربة، تتحرك فيها المياه ببطء شديد.
+      يعتمد هذا النظام على عوامل مثل نوع الصخور، درجة الانحدار، والضغط.
+      تتغذى المياه الجوفية من مياه الأمطار والتسربات من السطح، وتتحرك عبر الطبقات حتى تجد مخزنًا مناسبًا.
+    </p>
+  </div>
+</details>
+
+<details>
+  <summary>العلاقة بين الجيولوجيا والمياه الجوفية</summary>
+  <div style="padding-top: 15px; line-height: 2; font-size: 1.2rem; color: #ffffffcc;">
+    <p>
+      التركيب الجيولوجي لأي منطقة يحدد كمية ونوعية المياه الجوفية المتاحة.
+      الصخور الرملية غالبًا ما تكون عالية المسامية وتخزن كميات كبيرة من المياه،
+      بينما الصخور النارية أو المتحولة تكون صماء أو ضعيفة النفاذية.
+      فهم هذه العلاقة يساعد في اختيار المواقع المناسبة لحفر الآبار وتقييم إمكانيات المياه الجوفية.
+    </p>
+  </div>
+</details>
+
+<details>
+  <summary>أهمية الفهم الجيولوجي في إدارة المياه</summary>
+  <div style="padding-top: 15px; line-height: 2; font-size: 1.2rem; color: #ffffffcc;">
+    <p>
+      فهم الطبقات الجيولوجية ليس فقط مفيدًا للأبحاث الأكاديمية، بل هو ضروري أيضًا في تطبيقات الحياة اليومية.
+      تعتمد الحكومات والشركات على الدراسات الجيولوجية لتحديد أفضل أماكن الحفر وضمان استدامة الموارد الجوفية،
+      وتجنب التلوث وحماية المياه من الاستخدام المفرط.
+    </p>
+  </div>
+</details>
+
+<details>
+  <summary>الخاتمة</summary>
+  <div style="padding-top: 15px; line-height: 2; font-size: 1.2rem; color: #ffffffcc;">
+    <p>
+      الطبقات الجيولوجية والنظام المائي الجوفي عنصران متلازمان، وفهمهما يفتح أبوابًا لإدارة أفضل لمواردنا الطبيعية.
+      هذا الفهم يمكّننا من اتخاذ خطوات واعية نحو تنمية مستدامة. شكرًا جزيلاً على استماعكم، وأتمنى أن تكونوا قد استفدتم.
+    </p>
+  </div>
+</details>
+  </div>
+
+
+<div style="margin-top: 30px; text-align: center;">
+  <h2 style="color: cornflowerblue; margin-bottom: 10px;">استمع إلى الشرح الصوتي:</h2>
+  <audio controls style="width: 100%; max-width: 600px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);" controlsList="nodownload">
+    <source src="zinab.opus" type="audio/aac">
+    متصفحك لا يدعم تشغيل الصوت.
+  </audio>
+</div>
+  <div class="buttons-container">
+    <a href="topics.html">الرجوع للموضوعات</a>
+    <a class="back-btn" href="index.html">العودة إلى أقسام البرنامج</a>
+   
+    <a href="zinab.opus" download>تحميل الملف الصوتي</a>
+  </div>
+
+  <script>
+    function downloadPDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      html2canvas(document.querySelector("#pdf-content"), {scale: 2}).then(canvas => {
+        const imgData = canvas.toDataURL("image/png");
+        const imgProps= doc.getImageProperties(imgData);
+        const pdfWidth = doc.internal.pageSize.getWidth();
+        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+        doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        doc.save("topic.pdf");
+      });
+    }
+  </script>
+</body>
+</html>

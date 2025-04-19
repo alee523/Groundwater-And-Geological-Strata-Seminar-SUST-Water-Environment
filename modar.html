@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>تفاعلات المياه الجوفية مع الصخور</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      color: white;
+      min-height: 100vh;
+      padding-bottom: 180px;
+    }
+    .overlay {
+      position: fixed;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+      z-index: 1;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: #a0e9ff;
+      text-shadow: 0 0 15px #ffffff99;
+      animation: slideIn 1.2s ease-out forwards;
+    }
+    .content {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    details {
+      background: rgba(0, 188, 212, 0.05);
+      margin-bottom: 20px;
+      border-radius: 12px;
+      padding: 15px;
+      cursor: pointer;
+      border: 1px solid #00bcd4;
+    }
+    summary {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #00e5ff;
+      text-shadow: 0 0 5px #00e5ff66;
+    }
+    .buttons-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 30px 15px;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 999;
+    }
+    .buttons-container a,
+    .buttons-container button {
+      background: #00bcd4;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .buttons-container a:hover,
+    .buttons-container button:hover {
+      background: #0097a7;
+      transform: scale(1.05);
+    }
+    .back-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #00bcd4;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 1rem;
+      z-index: 1000;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+      transition: background 0.3s, transform 0.3s;
+    }
+    .back-btn:hover {
+      background: #0097a7;
+      transform: scale(1.05);
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <header>
+    <h1>تفاعلات المياه الجوفية مع الصخور</h1>
+  </header>
+<div class="video-section" style="max-width: 900px; margin: 40px auto 20px; position: relative; z-index: 1;">
+  <h2 style="color: #a0e9ff; text-align: center; margin-bottom: 20px;">شاهد الفيديو التوضيحي</h2>
+  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+    <video controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px;">
+      <source src="/سمنار/video/VID-20250419-WA0020.mp4" type="video/mp4">
+      متصفحك لا يدعم تشغيل الفيديو.
+    </video>
+  </div>
+</div>
+
+
+  <div class="content" id="pdf-content">
+    <details>
+      <summary>مقدمة</summary>
+      <div style="padding-top: 15px; line-height: 2; font-size: 1.2rem; color: #ffffffcc;">
+        <p>
+          هل فكرت يومًا أن <strong style="color:#00e5ff;">المياه الجوفية</strong> الموجودة في باطن الأرض قد تكون غير صالحة للشرب؟ ليس بسبب تلوث صناعي، بل نتيجة لتفاعلها الطبيعي مع الصخور؟
+        </p>
+        <p>
+          هذا الموضوع مهم للغاية، لأن التفاعلات الكيميائية التي تحدث بين المياه الجوفية والطبقات الجيولوجية يمكن أن تغيّر خصائص المياه تمامًا، سواء <strong style="color:#a0e9ff;">للأفضل أو للأسوأ</strong>.
+        </p>
+        <p>
+          <strong style="color:#00e5ff;">المياه الجوفية</strong>، أثناء تحركها في باطن الأرض، تمر عبر طبقات مختلفة من التربة والصخور. وخلال هذه الرحلة، تتفاعل كيميائيًا مع المعادن والعناصر الموجودة في الصخور، مما يؤدي إلى تغيّر في تركيبها الكيميائي.
+        </p>
+        <p>
+          في هذا السمنار، سنستعرض أهم أنواع التفاعلات التي تحدث، وتأثيرها على جودة المياه، ولماذا من المهم مراقبتها علميًا.
+        </p>
+      </div>
+    </details>
+
+
+<details>
+  <summary>الخلفية النظرية</summary>
+  <div style="padding-top: 15px; line-height: 2; font-size: 1.2rem; color: #ffffffcc;">
+    <p>
+      <strong style="color:#00e5ff;">لماذا تحدث التفاعلات الكيميائية بين المياه والصخور؟</strong> هناك عدة أسباب:
+    </p>
+    <ul style="margin-top: 10px; padding-right: 20px; list-style: disc;">
+      <li><strong style="color:#a0e9ff;">فرق التركيز:</strong> عندما يكون هناك اختلاف في تركيز الأملاح أو العناصر بين المياه والصخور، يحدث تبادل للأيونات.</li>
+      <li><strong style="color:#a0e9ff;">درجة الحموضة (pH):</strong> إذا كانت المياه حمضية أو قاعدية، فإنها تذيب أو تُرسب بعض المعادن من الصخور.</li>
+      <li><strong style="color:#a0e9ff;">وجود عناصر قابلة للذوبان:</strong> مثل الكالسيوم، والمغنيسيوم، والكبريتات، وهي عناصر تنتقل بسهولة من الصخور إلى المياه.</li>
+      <li><strong style="color:#a0e9ff;">الحرارة والضغط:</strong> في أعماق معينة من الأرض، تساهم الحرارة والضغط في تسريع هذه التفاعلات الكيميائية.</li>
+    </ul>
+  </div>
+</details>
+
+<details>
+  <summary>أنواع التفاعلات الكيميائية</summary>
+  <div style="padding-top: 15px; line-height: 2; font-size: 1.2rem; color: #ffffffcc;">
+    <ul style="padding-right: 20px; list-style: disc;">
+      <li><strong style="color:#00e5ff;">الإذابة (Dissolution):</strong> مثل ذوبان معدن الكالسيت، مما يزيد من قلوية المياه.</li>
+      <li><strong style="color:#00e5ff;">الترسيب (Precipitation):</strong> مثل تكوُّن كربونات الكالسيوم التي قد تسد الأنابيب.</li>
+      <li><strong style="color:#00e5ff;">تبادل الأيونات (Ion Exchange):</strong> حيث تستبدل المياه أيونات مثل الصوديوم بالكالسيوم أو المغنيسيوم.</li>
+      <li><strong style="color:#00e5ff;">الأكسدة والاختزال (Redox):</strong> مثل أكسدة الحديد، مما يؤدي إلى تغيّر لون المياه أو ظهور طعم معدني.</li>
+    </ul>
+  </div>
+</details>
+
+
+
+<details>
+  <summary>التأثيرات البيئية والهيدروجيولوجية</summary>
+  <div style="padding-top: 15px; line-height: 2; font-size: 1.2rem; color: #ffffffcc;">
+    <ul style="padding-right: 20px; list-style: disc;">
+      <li><strong style="color:#00e5ff;">تغيّر في جودة المياه:</strong> قد تزداد الملوحة، أو القلوية، أو تتراكم فيها معادن ثقيلة.</li>
+      <li>يشكل ذلك خطرًا على صحة الإنسان.</li>
+      <li>كما يسبب تحديات في استخدام المياه الجوفية لأغراض الشرب أو الزراعة دون معالجة.</li>
+    </ul>
+  </div>
+</details>
+
+
+<details>
+  <summary>طرق الرصد والتحليل</summary>
+  <div style="padding-top: 15px; line-height: 2; font-size: 1.2rem; color: #ffffffcc;">
+    <ul style="padding-right: 20px; list-style: disc;">
+      <li>يتم إجراء تحليل كيميائي للمياه، يتضمن قياس درجة الحموضة، التوصيلية الكهربائية، وتركيز الأيونات.</li>
+      <li>تُستخدم برامج مثل <strong style="color:#a0e9ff;">PHREEQC</strong> لمحاكاة التفاعلات الكيميائية.</li>
+      <li>تتم دراسة حركة المياه عبر <strong style="color:#a0e9ff;">الخرائط الهيدروجيولوجية</strong> لفهم مصدرها ومساراتها.</li>
+    </ul>
+  </div>
+</details>
+
+
+<details>
+  <summary>سؤال مفتوح للنقاش</summary>
+  <div style="padding-top: 15px; line-height: 2; font-size: 1.2rem; color: #ffffffcc;">
+    <p>
+      <strong style="color:#00e5ff;">برأيكم، كيف يمكننا تحقيق توازن بين استخدامنا للمياه الجوفية وضمان استدامتها في ظل هذه التفاعلات الطبيعية؟</strong>
+    </p>
+  </div>
+</details>
+    <!-- باقي الأقسام تضاف بنفس طريقة التفاصيل -->
+  </div>
+
+  <div class="buttons-container">
+    <a href="topics.html">الرجوع للموضوعات</a>
+    <a class="back-btn" href="index.html">العودة إلى أقسام البرنامج</a>
+<a href="/سمنار/video/VID-20250419-WA0020.mp4" download>تحميل الفيديو</a>
+  </div>
+
+  <script>
+    function downloadPDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      html2canvas(document.querySelector("#pdf-content"), {scale: 2}).then(canvas => {
+        const imgData = canvas.toDataURL("image/png");
+        const imgProps= doc.getImageProperties(imgData);
+        const pdfWidth = doc.internal.pageSize.getWidth();
+        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+        doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        doc.save("reactions-topic.pdf");
+      });
+    }
+  </script>
+</body>
+</html>
